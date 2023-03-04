@@ -35,7 +35,8 @@ namespace TeleportPlugin
 
             TeleportPoints.Add(teleport_point);
 
-            StreamWriter sw = new StreamWriter("F:\\teleport_points.json");
+            // Запись .json файла в текущую директорию
+            StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory());
 
             sw.Write(JsonConvert.SerializeObject(TeleportPoints));
 
