@@ -19,7 +19,7 @@ namespace TeleportPlugin
 
         protected override void Unload()
         {
-
+            TeleportPlugin.Instance = null;
         }
     }
 }

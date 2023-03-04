@@ -1,5 +1,4 @@
 /.vs
-/packages
 /build/
 *.suo
 *.user
