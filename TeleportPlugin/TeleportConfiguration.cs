@@ -31,9 +31,7 @@ namespace TeleportPlugin
 
         public void AppendTeleportPoint(Vector3 positon, string player_name)
         {
-            TeleportPoint teleport_point = new TeleportPoint();
-            teleport_point.position = (positon.x, positon.y, positon.z);
-            teleport_point.player_name = player_name;
+            TeleportPoint teleport_point = new TeleportPoint(positon, player_name);
 
             TeleportPoints.Add(teleport_point);
 
@@ -54,10 +52,30 @@ namespace TeleportPlugin
         }
     }
 
+    public struct Position
+    {
+        public float x;
+        public float y;
+        public float z;
+    }
+
     public class TeleportPoint
     {
-        public (float, float, float) position;
+
+        public Position position;
+        
         public string player_name;
+
+
+        public TeleportPoint(Vector3 pos, string player_name)
+        {
+            this.position.x = pos.x;
+            this.position.y = pos.y;
+            this.position.z = pos.z;
+
+            this.player_name = player_name;
+
+        }
 
     }
 }

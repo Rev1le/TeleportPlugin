@@ -46,7 +46,7 @@ namespace TeleportPlugin
                     string pos = random_teleport_position.position.ToString();
                     UnturnedChat.Say(player, pos);
 
-                    player.Teleport(new Vector3(random_teleport_position.position.Item1, random_teleport_position.position.Item2, random_teleport_position.position.Item3), player.Rotation);
+                    player.Teleport(new Vector3(random_teleport_position.position.x, random_teleport_position.position.y, random_teleport_position.position.z), player.Rotation);
                     break;
 
                 // Если игрок вводит команду с аргументом 'set' /tp set
